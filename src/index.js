@@ -1,9 +1,31 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import App from "./App";
+import AmbulansForm from "./forms/AmbulansForm";
+import AmbulansList from "./istekler/AmbulansList";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/ambulans",
+    element: <AmbulansForm />,
+    },
+    {
+    path: "/ambulanslist",
+    element: <AmbulansList />,
+    },
 
-const element = document.getElementById("root");
+]);
 
-const root = ReactDOM.render(<App />, element);
-
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
