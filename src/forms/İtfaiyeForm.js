@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LogoComp from '../components/LogoComp';
 
-const AmbulansForm = () => {
+const İtfaiyeForm = () => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [address, setAddress] = useState('');
@@ -10,6 +10,7 @@ const AmbulansForm = () => {
   const [injuredCount, setInjuredCount] = useState('');
   const [physicalCondition, setPhysicalCondition] = useState('');
   const [urgency, setUrgency] = useState('');
+  const [speed , setSpeed] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const AmbulansForm = () => {
       injuredCount,
       physicalCondition,
       urgency,
+        speed,
     });
     // Reset form fields
     setName('');
@@ -33,6 +35,8 @@ const AmbulansForm = () => {
     setInjuredCount('');
     setPhysicalCondition('');
     setUrgency('');
+        setSpeed('');
+
   };
 
   return (
@@ -49,7 +53,7 @@ const AmbulansForm = () => {
     >
       <div>
         <h1 style={{ textAlign: 'center', fontFamily: 'sans-serif' }}>
-            Ambulans Talebi
+        İtfaiye  Talebi
         </h1>
         <form
           onSubmit={handleSubmit}
@@ -195,7 +199,7 @@ const AmbulansForm = () => {
                 color:'#f07f13',
               }}
             >
-              * Adres:
+              * Yangının Bulunduğu Bölge:
             </label>
             <input
               type="text"
@@ -220,68 +224,6 @@ const AmbulansForm = () => {
             }}
           >
             <div style={{ width: '48%' }}>
-              <label
-                htmlFor="injuredCount"
-                style={{
-                  display: 'block',
-                  marginBottom: '5px',
-                  fontWeight: 'bold',
-                  color:'#f07f13',
-                }}
-              >
-                * Yaralı Sayısı:
-              </label>
-              <input
-                type="number"
-                id="injuredCount"
-                value={injuredCount}
-                onChange={(e) => setInjuredCount(e.target.value)}
-                style={{
-                  width: '100%',
-                  padding: '10px',
-                  border: '2px solid rgba(71, 101, 255, 0.37)',
-                  borderRadius: '10px',
-                  outline: 'none',
-                }}
-                required
-                min={1}
-              />
-            </div>
-            <div style={{ width: '48%' }}>
-              <label
-                htmlFor="physicalCondition"
-                style={{
-                  display: 'block',
-                  marginBottom: '5px',
-                  fontWeight: 'bold',
-                  color:'#f07f13',
-                }}
-              >
-                * Fiziksel Durum (Maksimum 200 karakter):
-              </label>
-              <textarea
-                id="physicalCondition"
-                value={physicalCondition}
-                onChange={(e) => {
-                  if (e.target.value.length <= 200) {
-                    setPhysicalCondition(e.target.value);
-                  }
-                }}
-                style={{
-                  width: '100%',
-                  padding: '10px',
-                  border: '2px solid rgba(71, 101, 255, 0.37)',
-                  borderRadius: '10px',
-                  outline: 'none',
-                  resize: 'vertical',
-                  minHeight: '80px',
-                  maxHeight: '150px',
-                }}
-                required
-              />
-            </div>
-          </div>
-          <div style={{ marginBottom: '20px' }}>
             <label
               htmlFor="urgency"
               style={{
@@ -291,7 +233,7 @@ const AmbulansForm = () => {
                 color:'#f07f13',
             }}
             >
-              * Aciliyet:
+              * Yangının Büyüklüğü:
             </label>
             <select
               id="urgency"
@@ -306,11 +248,43 @@ const AmbulansForm = () => {
               }}
               required
             >
-              <option value="">Aciliyet Seçin</option>
+              <option value="">Büyüklük Seçin</option>
               <option value="Kritik">Kritik</option>
               <option value="Orta">Orta</option>
               <option value="Normal">Normal</option>
             </select>
+            </div>
+            <div style={{ width: '48%' }}>
+            <label
+              htmlFor="speed"
+              style={{
+                display: 'block',
+                marginBottom: '5px',
+                fontWeight: 'bold',
+                color:'#f07f13',
+            }}
+            >
+              * Yangının İlerleme Hızı:
+            </label>
+            <select
+              id="speed"
+              value={speed}
+              onChange={(e) => setSpeed(e.target.value)}
+              style={{
+                width: '100%',
+                padding: '10px',
+                border: '2px solid rgba(71, 101, 255, 0.37)',
+                borderRadius: '10px',
+                outline: 'none',
+              }}
+              required
+            >
+              <option value="">Hızı Seçin</option>
+              <option value="Hızlı">Hızlı</option>
+              <option value="Orta">Orta</option>
+              <option value="Yavaş">Yavaş</option>
+            </select>
+          </div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <button
@@ -338,4 +312,4 @@ const AmbulansForm = () => {
   );
 };
 
-export default AmbulansForm;
+export default İtfaiyeForm;

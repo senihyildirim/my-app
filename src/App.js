@@ -1,24 +1,23 @@
 import React from 'react';
-import ButtonComponent from './components/ButtonComponent';
-// Sayfa bileşenleri
-import AmbulansForm from './forms/AmbulansForm';
-import AmbulansList from './istekler/AmbulansList';
+import YardimAl from './components/YardimAl';
+import YardimSagla from './components/YardimSagla';
+import YardimListeleri from './components/YardimListeleri';
+import LogoComp from './components/LogoComp';
 
 function App() {
-  const data = [
-    {
-      name: 'John Doe',
-      address: '123 Main St, City',
-      phone: '555-1234',
-      description: 'Bir acil durum var, yardıma ihtiyacım var.',
-      urgency: 'Kritik',
-    },
-    // Diğer form verileri burada eklenebilir
-  ];
   return (
-    <div>
-      <ButtonComponent logo="animal.svg" path="/ambulans" title="Ambulans" />
-      <ButtonComponent logo="animal.svg" path="/ambulanslist" title="AmbulansList" />
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        margin: "0 auto",
+        backgroundColor: "#f7f7f7",
+      }}
+    >
+      <LogoComp />
+      <YardimAl />
+      <YardimSagla />
+      <YardimListeleri />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LogoComp from '../components/LogoComp';
 
-const AmbulansForm = () => {
+const GidaForm = () => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [address, setAddress] = useState('');
@@ -49,7 +49,7 @@ const AmbulansForm = () => {
     >
       <div>
         <h1 style={{ textAlign: 'center', fontFamily: 'sans-serif' }}>
-            Ambulans Talebi
+            Gıda Talebi
         </h1>
         <form
           onSubmit={handleSubmit}
@@ -229,7 +229,7 @@ const AmbulansForm = () => {
                   color:'#f07f13',
                 }}
               >
-                * Yaralı Sayısı:
+                * Gıdaya İhtiyacı Olan Kişi Sayısı:
               </label>
               <input
                 type="number"
@@ -248,40 +248,6 @@ const AmbulansForm = () => {
               />
             </div>
             <div style={{ width: '48%' }}>
-              <label
-                htmlFor="physicalCondition"
-                style={{
-                  display: 'block',
-                  marginBottom: '5px',
-                  fontWeight: 'bold',
-                  color:'#f07f13',
-                }}
-              >
-                * Fiziksel Durum (Maksimum 200 karakter):
-              </label>
-              <textarea
-                id="physicalCondition"
-                value={physicalCondition}
-                onChange={(e) => {
-                  if (e.target.value.length <= 200) {
-                    setPhysicalCondition(e.target.value);
-                  }
-                }}
-                style={{
-                  width: '100%',
-                  padding: '10px',
-                  border: '2px solid rgba(71, 101, 255, 0.37)',
-                  borderRadius: '10px',
-                  outline: 'none',
-                  resize: 'vertical',
-                  minHeight: '80px',
-                  maxHeight: '150px',
-                }}
-                required
-              />
-            </div>
-          </div>
-          <div style={{ marginBottom: '20px' }}>
             <label
               htmlFor="urgency"
               style={{
@@ -311,6 +277,7 @@ const AmbulansForm = () => {
               <option value="Orta">Orta</option>
               <option value="Normal">Normal</option>
             </select>
+            </div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <button
@@ -338,4 +305,4 @@ const AmbulansForm = () => {
   );
 };
 
-export default AmbulansForm;
+export default GidaForm;

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import LogoComp from '../components/LogoComp';
 
-const AmbulansForm = () => {
+const VetTemin = () => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [address, setAddress] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [injuredCount, setInjuredCount] = useState('');
-  const [physicalCondition, setPhysicalCondition] = useState('');
+  const [passengerCount, setPassengerCount] = useState('');
+  const [time, setTime] = useState('');
   const [urgency, setUrgency] = useState('');
 
   const handleSubmit = (e) => {
@@ -20,8 +20,8 @@ const AmbulansForm = () => {
       address,
       email,
       phone,
-      injuredCount,
-      physicalCondition,
+      passengerCount,
+      time,
       urgency,
     });
     // Reset form fields
@@ -30,8 +30,8 @@ const AmbulansForm = () => {
     setAddress('');
     setEmail('');
     setPhone('');
-    setInjuredCount('');
-    setPhysicalCondition('');
+    setPassengerCount('');
+    setTime('');
     setUrgency('');
   };
 
@@ -49,7 +49,7 @@ const AmbulansForm = () => {
     >
       <div>
         <h1 style={{ textAlign: 'center', fontFamily: 'sans-serif' }}>
-            Ambulans Talebi
+            Hayvanlara Yardım Sağlayabilirim
         </h1>
         <form
           onSubmit={handleSubmit}
@@ -195,7 +195,7 @@ const AmbulansForm = () => {
                 color:'#f07f13',
               }}
             >
-              * Adres:
+              * Hangi Tür Hayvanlara Yardım Edebilirsiniz:
             </label>
             <input
               type="text"
@@ -219,69 +219,7 @@ const AmbulansForm = () => {
               marginBottom: '20px',
             }}
           >
-            <div style={{ width: '48%' }}>
-              <label
-                htmlFor="injuredCount"
-                style={{
-                  display: 'block',
-                  marginBottom: '5px',
-                  fontWeight: 'bold',
-                  color:'#f07f13',
-                }}
-              >
-                * Yaralı Sayısı:
-              </label>
-              <input
-                type="number"
-                id="injuredCount"
-                value={injuredCount}
-                onChange={(e) => setInjuredCount(e.target.value)}
-                style={{
-                  width: '100%',
-                  padding: '10px',
-                  border: '2px solid rgba(71, 101, 255, 0.37)',
-                  borderRadius: '10px',
-                  outline: 'none',
-                }}
-                required
-                min={1}
-              />
-            </div>
-            <div style={{ width: '48%' }}>
-              <label
-                htmlFor="physicalCondition"
-                style={{
-                  display: 'block',
-                  marginBottom: '5px',
-                  fontWeight: 'bold',
-                  color:'#f07f13',
-                }}
-              >
-                * Fiziksel Durum (Maksimum 200 karakter):
-              </label>
-              <textarea
-                id="physicalCondition"
-                value={physicalCondition}
-                onChange={(e) => {
-                  if (e.target.value.length <= 200) {
-                    setPhysicalCondition(e.target.value);
-                  }
-                }}
-                style={{
-                  width: '100%',
-                  padding: '10px',
-                  border: '2px solid rgba(71, 101, 255, 0.37)',
-                  borderRadius: '10px',
-                  outline: 'none',
-                  resize: 'vertical',
-                  minHeight: '80px',
-                  maxHeight: '150px',
-                }}
-                required
-              />
-            </div>
-          </div>
-          <div style={{ marginBottom: '20px' }}>
+            <div style={{ marginBottom: '20px', width: '48%'  }}>
             <label
               htmlFor="urgency"
               style={{
@@ -291,7 +229,7 @@ const AmbulansForm = () => {
                 color:'#f07f13',
             }}
             >
-              * Aciliyet:
+              * Eğitim Durumunuz:
             </label>
             <select
               id="urgency"
@@ -306,12 +244,13 @@ const AmbulansForm = () => {
               }}
               required
             >
-              <option value="">Aciliyet Seçin</option>
-              <option value="Kritik">Kritik</option>
-              <option value="Orta">Orta</option>
-              <option value="Normal">Normal</option>
+              <option value="">Eğitim Durumu Seçin</option>
+              <option value="Var">Eğitimim Var</option>
+              <option value="Yok">Eğitimim Yok</option>
             </select>
           </div>
+          </div>
+ 
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <button
               type="submit"
@@ -338,4 +277,4 @@ const AmbulansForm = () => {
   );
 };
 
-export default AmbulansForm;
+export default VetTemin;

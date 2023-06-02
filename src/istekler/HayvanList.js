@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const AmbulansList = () => {
+const EvMusaitList = () => {
 
     const data = [
         {
@@ -10,13 +10,19 @@ const AmbulansList = () => {
           description: 'Bir acil durum var, yardıma ihtiyacım var.',
           urgency: 'Kritik',
         },
-        // Diğer form verileri burada eklenebilir
+        {
+            name: 'John Doe',
+            address: '123 Main St, City',
+            phone: '555-1234',
+            description: 'Bir acil durum var, yardıma ihtiyacım var.',
+            urgency: 'Kritik',
+          },
       ];
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', fontSize: '16px', color: '#333' }}>
-      <h1 style={{ textAlign: 'center', margin: '20px 0' }}>Ambulans İsteği Bildirim Formu</h1>
+      <h1 style={{ textAlign: 'center', margin: '20px 0' }}>Yardıma İhtiyacı Olan Hayvanlar</h1>
         <div style={{ display: 'flex', justifyContent: 'center' }}> 
-            <table style={{ borderCollapse: 'collapse', width: '100%' }}>
+            <table style={{ borderCollapse: 'collapse', width: '80%', borderRadius:'20px'}}>
                 <thead>
                     <tr style={{ backgroundColor: '#f07f13', color: '#fff' }}>
                         <th style={{ border: '1px solid #ddd', padding: '8px' }}>İsim</th>
@@ -45,4 +51,4 @@ const AmbulansList = () => {
   );
 };
 
-export default AmbulansList;
+export default EvMusaitList;

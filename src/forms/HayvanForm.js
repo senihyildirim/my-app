@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import LogoComp from '../components/LogoComp';
 
-const AmbulansForm = () => {
+const HayvanForm = () => {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [address, setAddress] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [injuredCount, setInjuredCount] = useState('');
+  const [animalCount, setAnimalCount] = useState('');
   const [physicalCondition, setPhysicalCondition] = useState('');
   const [urgency, setUrgency] = useState('');
 
@@ -20,7 +20,7 @@ const AmbulansForm = () => {
       address,
       email,
       phone,
-      injuredCount,
+      animalCount,
       physicalCondition,
       urgency,
     });
@@ -30,7 +30,7 @@ const AmbulansForm = () => {
     setAddress('');
     setEmail('');
     setPhone('');
-    setInjuredCount('');
+    setAnimalCount('');
     setPhysicalCondition('');
     setUrgency('');
   };
@@ -49,7 +49,7 @@ const AmbulansForm = () => {
     >
       <div>
         <h1 style={{ textAlign: 'center', fontFamily: 'sans-serif' }}>
-            Ambulans Talebi
+            Yardıma İhtiyacı Olan Havanlar
         </h1>
         <form
           onSubmit={handleSubmit}
@@ -195,7 +195,7 @@ const AmbulansForm = () => {
                 color:'#f07f13',
               }}
             >
-              * Adres:
+              * Hayvanın Bulunduğu Bölge:
             </label>
             <input
               type="text"
@@ -221,7 +221,7 @@ const AmbulansForm = () => {
           >
             <div style={{ width: '48%' }}>
               <label
-                htmlFor="injuredCount"
+                htmlFor="animalCount"
                 style={{
                   display: 'block',
                   marginBottom: '5px',
@@ -229,13 +229,13 @@ const AmbulansForm = () => {
                   color:'#f07f13',
                 }}
               >
-                * Yaralı Sayısı:
+                * Hayvan Sayısı:
               </label>
               <input
                 type="number"
-                id="injuredCount"
-                value={injuredCount}
-                onChange={(e) => setInjuredCount(e.target.value)}
+                id="animalCount"
+                value={animalCount}
+                onChange={(e) => setAnimalCount(e.target.value)}
                 style={{
                   width: '100%',
                   padding: '10px',
@@ -257,7 +257,7 @@ const AmbulansForm = () => {
                   color:'#f07f13',
                 }}
               >
-                * Fiziksel Durum (Maksimum 200 karakter):
+                * Hayvanın Türü ve Durumu (Maksimum 200 karakter):
               </label>
               <textarea
                 id="physicalCondition"
@@ -338,4 +338,4 @@ const AmbulansForm = () => {
   );
 };
 
-export default AmbulansForm;
+export default HayvanForm;
